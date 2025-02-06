@@ -26,7 +26,7 @@ class Produto(models.Model):
     data_criacao = models.DateTimeField(auto_now_add=True)
 
     fornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE)
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    categorias = models.ManyToManyField(Categoria)
 
     def __str__(self):
         return self.nome
