@@ -24,3 +24,14 @@ class SupplierCreateView(CreateView):
     form_class = SupplierForm
     template_name = "supplier-add.html"
     success_url = reverse_lazy('supplier')
+
+class CategoryListView(ListView):
+    model = Categoria
+    template_name = "category.html"
+    context_object_name = 'categories'
+
+class CategoryCreateView(CreateView):
+    model = Categoria
+    form_class = CategoryForm
+    template_name = "category-add.html"
+    success_url = reverse_lazy('category')

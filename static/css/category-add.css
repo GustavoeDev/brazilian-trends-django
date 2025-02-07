@@ -1,0 +1,36 @@
+.category-add-container {
+  max-width: 64.5rem;
+  margin: 2rem auto 4rem;
+}
+
+.category-add-container > h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  margin-bottom: 1rem;
+}
+
+.category-add-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  margin-bottom: 1rem;
+}
+
+.category-add-container .form-group > input,
+.category-add-container .form-group > textarea {
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.category-add-container form > button[type="submit"] {
+  background-color: var(--blue-500);
+  color: var(--white);
+  font-weight: 600;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}

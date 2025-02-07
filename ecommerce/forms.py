@@ -35,3 +35,8 @@ class SupplierForm(forms.ModelForm):
     class Meta:
         model = Fornecedor
         fields = '__all__'
+
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Categoria
+        fields = '__all__'

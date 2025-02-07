@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+
+<link rel="stylesheet" href="{% static 'css/category.css' %}" />
+
+{% endblock %} {% block main %}
+
+<div class="category-container">
+  <h2>Lista de Categorias</h2>
+  <div class="categories">
+    {% for category in categories %}
+    <div class="category">
+      <h3>{{ category.nome }}</h3>
+      {% if category.descricao %}
+      <p><strong>Descrição:</strong> {{ category.descricao }}</p>
+      {% else %}
+      <p><strong>Descrição:</strong> Esta categoria não tem descrição</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
