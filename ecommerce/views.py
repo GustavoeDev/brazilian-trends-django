@@ -3,9 +3,14 @@ from django.urls import reverse_lazy
 from .forms import *
 from .models import *
 
-class ProductListView(ListView):
+class HomeView(ListView):
     model = Produto
     template_name = "home.html"
+    context_object_name = 'products'
+
+class ProductListView(ListView):
+    model = Produto
+    template_name = "product.html"
     context_object_name = 'products'
 
 class ProductCreateView(CreateView):

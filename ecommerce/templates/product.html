@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+
+<link rel="stylesheet" href="{% static 'css/product.css' %}" />
+
+{% endblock %} {% block main %}
+
+<div class="product-container">
+  <h2>Lista de Produtos</h2>
+  <div class="products">
+    {% for product in products %}
+    <div class="product">
+      <h3>{{ product.nome }}</h3>
+      <p><strong>Descrição:</strong> {{ product.descricao }}</p>
+      <p><strong>Preço:</strong> {{ product.preco }}</p>
+      <p><strong>Quantidade:</strong> {{ product.quantidade }}</p>
+      <p><strong>Data de criação:</strong> {{ product.data_criacao }}</p>
+      <p><strong>Código:</strong> {{ product.codigo }}</p>
+      <p><strong>Fornecedor:</strong> {{ product.fornecedor }}</p>
+      <p><strong>Categorias:</strong> {{ product.categorias }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
