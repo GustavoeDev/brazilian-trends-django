@@ -12,6 +12,7 @@ class ProductListView(ListView):
     model = Produto
     template_name = "product.html"
     context_object_name = 'products'
+    paginate_by = 5
 
 class ProductCreateView(CreateView):
     model = Produto

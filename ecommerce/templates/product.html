@@ -20,6 +20,36 @@
     </div>
     {% endfor %}
   </div>
+
+  <div class="pagination">
+    {% if page_obj.has_previous %}
+    <div>
+      <a href="?page=1">&laquo; Primeira</a>
+      <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+    </div>
+    {% else %}
+    <div>
+      <span class="disabled">&laquo; Primeira</span>
+      <span class="disabled">Anterior</span>
+    </div>
+    {% endif %}
+
+    <span
+      >Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span
+    >
+
+    {% if page_obj.has_next %}
+    <div>
+      <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+      <a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+    </div>
+    {% else %}
+    <div>
+      <span class="disabled">Próxima</span>
+      <span class="disabled">Última &raquo;</span>
+    </div>
+    {% endif %}
+  </div>
 </div>
 
 {% endblock %}

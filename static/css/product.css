@@ -30,3 +30,26 @@
 .product > p {
   margin: 0.188rem 0;
 }
+
+.pagination {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pagination > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: var(--blue-500);
+}
+
+.pagination .disabled {
+  opacity: 0.5;
+  color: gray;
+  cursor: not-allowed;
+}
