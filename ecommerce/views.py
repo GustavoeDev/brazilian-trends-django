@@ -12,4 +12,4 @@ class ProductCreateView(CreateView):
     model = Produto
     form_class = ProductForm
     template_name = "product-add.html"
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('product')
