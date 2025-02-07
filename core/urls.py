@@ -4,5 +4,6 @@ from ecommerce.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view, name='home'),
+    path('', ProductListView.as_view(), name='product'),
+    path('produto/adicionar/', ProductCreateView.as_view(), name='product-add'),
 ]

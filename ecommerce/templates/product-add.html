@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% load static %} {% block main %}
+
+<div class="product-add-container">
+  <h2>Cadastrar Produto</h2>
+  <form action="." method="post">
+    {%csrf_token%} {{form}}
+    <button type="submit">Criar</button>
+  </form>
+</div>
+
+{% endblock %}
