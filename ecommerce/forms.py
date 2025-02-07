@@ -1,31 +1,32 @@
 from django import forms
-from .models import *
+from .models import Produto
 
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Produto
         fields = '__all__'
 
-    def clean_nome(self):
-        nome = self.cleaned_data.get('nome')
-        if len(nome) < 3:
-            raise forms.ValidationError("O nome do produto deve ter pelo menos 3 caracteres.")
-        return nome
-    
-    def clean_preco(self):
-        preco = self.cleaned_data.get('preco')
-        if preco <= 0:
-            raise forms.ValidationError("O preço do produto deve ser maior que zero.")
-        return preco
-    
-    def clean_quantidade(self):
-        quantidade = self.cleaned_data.get('quantidade')
-        if quantidade < 0:
-            raise forms.ValidationError("A quantidade em estoque deve ser um número inteiro maior ou igual a zero.")
-        return quantidade
+    def clean(self):
+        cleaned_data = super().clean()
 
-    def clean_codigo(self):
-        codigo = self.cleaned_data.get('codigo')
-        if not codigo.isalnum():
-            raise forms.ValidationError("O código do produto deve conter apenas letras e números (sem espaços ou caracteres especiais).")
-        return codigo
+        nome = cleaned_data.get('nome')
+        preco = cleaned_data.get('preco')
+        quantidade = cleaned_data.get('quantidade')
+        codigo = cleaned_data.get('codigo')
+
+        if nome and len(nome) < 3:
+            self.add_error('nome', "O nome do produto deve ter pelo menos 3 caracteres.")
+
+        if preco is not None and preco <= 0:
+            self.add_error('preco', "O preço do produto deve ser maior que zero.")
+
+        if quantidade is not None and quantidade < 0:
+            self.add_error('quantidade', "A quantidade em estoque deve ser um número inteiro maior ou igual a zero.")
+
+        if codigo:
+            if not codigo.isalnum():
+                self.add_error('codigo', "O código do produto deve conter apenas letras e números (sem espaços ou caracteres especiais).")
+            if Produto.objects.filter(codigo=codigo).exists():
+                self.add_error('codigo', "Já existe um produto com esse código.")
+
+        return cleaned_data
