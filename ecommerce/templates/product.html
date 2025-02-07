@@ -6,6 +6,29 @@
 
 <div class="product-container">
   <h2>Lista de Produtos</h2>
+  <form method="GET" class="filter-form">
+    <input
+      type="text"
+      name="nome"
+      placeholder="Buscar por nome"
+      value="{{ request.GET.nome }}"
+    />
+    <input
+      type="number"
+      name="preco_min"
+      placeholder="Preço mínimo"
+      value="{{ request.GET.preco_min }}"
+      step="0.1"
+    />
+    <input
+      type="number"
+      name="preco_max"
+      placeholder="Preço máximo"
+      value="{{ request.GET.preco_max }}"
+      step="0.1"
+    />
+    <button type="submit">Filtrar</button>
+  </form>
   <div class="products">
     {% for product in products %}
     <div class="product">
