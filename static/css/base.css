@@ -11,6 +11,7 @@ header {
 }
 
 header > .logo {
+  text-decoration: none;
   font-size: 2rem;
   color: var(--pink-900);
   font-weight: 700;
