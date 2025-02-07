@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+
+<link rel="stylesheet" href="{% static 'css/supplier-add.css' %}" />
+
+{% endblock %} {% block main %}
+
+<div>
+  <div class="supplier-add-container">
+    <h2>Cadastrar Fornecedor</h2>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <div class="form-group">{{ form.nome.label_tag }} {{ form.nome }}</div>
+
+      <div class="form-group">
+        {{ form.telefone.label_tag }} {{ form.telefone }}
+      </div>
+
+      <div class="form-group">{{ form.email.label_tag }} {{ form.email }}</div>
+
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
