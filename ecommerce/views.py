@@ -6,7 +6,7 @@ from .models import *
 class ProductListView(ListView):
     model = Produto
     template_name = "home.html"
-    context_object_name = 'product'
+    context_object_name = 'products'
 
 class ProductCreateView(CreateView):
     model = Produto

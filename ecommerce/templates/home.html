@@ -23,110 +23,21 @@
 <section class="main-content">
   <h2>lançamentos</h2>
   <div class="products-container">
+    {% for product in products %}
     <div class="product">
       <img src="{% static 'img/product-image.png' %}" alt="" />
       <div class="product-info">
         <div class="product-label">
           <span>lançamento</span>
         </div>
-        <h3>Blusa denim tubo</h3>
+        <h3>{{ product.nome }}</h3>
         <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
+          <p>R$ {{ product.preco }}</p>
+          <span>R$ {{ product.preco }} à vista com desconto Pix</span>
         </div>
       </div>
     </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>lançamento</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>lançamento</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>lançamento</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>lançamento</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>lançamento</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>lançamento</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>lançamento</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 
   <div class="banners-products">
@@ -140,58 +51,22 @@
 
   <h2>promoção</h2>
   <div class="products-container">
+    {% for product in products %}
     <div class="product">
       <img src="{% static 'img/product-image.png' %}" alt="" />
       <div class="product-info">
         <div class="product-label">
           <span>promoção</span>
         </div>
-        <h3>Blusa denim tubo</h3>
+        <h3>{{ product.nome }}</h3>
         <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
+          <p>R$ {{ product.preco }}</p>
+          <span>R$ {{ product.preco }} á vista com desconto Pix</span>
         </div>
       </div>
     </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>promoção</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>promoção</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
-    <div class="product">
-      <img src="{% static 'img/product-image.png' %}" alt="" />
-      <div class="product-info">
-        <div class="product-label">
-          <span>promoção</span>
-        </div>
-        <h3>Blusa denim tubo</h3>
-        <div class="product-price">
-          <p>R$ 49,99</p>
-          <span>R$ 49,99 á vista com desconto Pix</span>
-        </div>
-      </div>
-    </div>
+
+    {% endfor %}
   </div>
 </section>
 {% endblock %}
