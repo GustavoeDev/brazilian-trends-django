@@ -1,5 +1,5 @@
 from django import forms
-from .models import Produto
+from .models import *
 
 class ProductForm(forms.ModelForm):
     class Meta:
@@ -30,3 +30,8 @@ class ProductForm(forms.ModelForm):
                 self.add_error('codigo', "Já existe um produto com esse código.")
 
         return cleaned_data
+
+class SupplierForm(forms.ModelForm):
+    class Meta:
+        model = Fornecedor
+        fields = '__all__'

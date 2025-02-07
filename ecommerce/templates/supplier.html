@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+
+<link rel="stylesheet" href="{% static 'css/supplier.css' %}" />
+
+{% endblock %} {% block main %} 
+
+<div class="supplier-container">
+    <h2>Lista de Fornecedores</h2>
+    <div class="suppliers">
+        {% for supplier in suppliers %}
+        <div class="supplier">
+            <h3>{{ supplier.nome }}</h3>
+            <p><strong>Contato:</strong> {{ supplier.email }}</p>
+            <p><strong>Telefone:</strong> {{ supplier.telefone }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
