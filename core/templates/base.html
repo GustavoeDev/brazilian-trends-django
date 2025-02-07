@@ -45,16 +45,9 @@
     </header>
 
     <nav class="navigation">
-      <a href="#">casacos</a>
-      <a href="#">body</a>
-      <a href="#">cropped</a>
-      <a href="#">tshirts</a>
-      <a href="#">vestidos</a>
-      <a href="#">jaquetas</a>
-      <a href="#">shorts e saias</a>
-      <a href="#">calças</a>
-      <a href="#">sapatos</a>
-      <a href="#">acessórios</a>
+      {% for categoria in categorias|slice:":10" %}
+      <a href="#">{{ categoria.nome }}</a>
+      {% endfor %}
     </nav>
 
     <main>{% block main %} {% endblock %}</main>
